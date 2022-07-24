@@ -28,7 +28,7 @@ it("user search with warrior text", () => {
 
     cy.visit('/poses');
     cy.get("genk-poses").shadow().find("#searchText").type("Warrior");    
-    cy.get("genk-poses").shadow().find("#button").click();
+    cy.get("genk-poses").shadow().find("#search-button").click();
     cy.wait(0);
     // cy.get("#pose_8").should("exist")
 

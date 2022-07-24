@@ -16,7 +16,6 @@ export class PosesComponent extends LitElement {
       },
       title: { type: String },
       placeholder: { type: String },
-      favoriteTitle: { type: String },
       searchText: {
         type: String,
       },
@@ -24,9 +23,8 @@ export class PosesComponent extends LitElement {
   }
   constructor() {
     super();
-    this.title = "My list of poses";
+    this.title = "My list of asanas";
     this.placeholder = "Filter by name";
-    this.favoriteTitle = "My Yoga session";
   }
   //lo quito para que me coja los estilos aqui
   // createRenderRoot() {
@@ -80,30 +78,7 @@ export class PosesComponent extends LitElement {
         justify-content: flex-start;
         align-items: flex-start;
       }
-      .poses__list {
-        display: flex;
-        flex-flow: row wrap;
-        align-content: flex-start;
-        justify-content: space-between;
-        width: 35%;
-        margin-left: 1rem;
-      }
-      .favorites {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: flex-start;
-        align-items: center;
-        width: 60%;
-        height: 500px;
-        border-radius: 0.5rem;
-        box-shadow: 0px 0px 5px 5px var(--color-primary);
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-      }
-      .favorites__title {
-        font-size: 1.5rem;
-        color: var(--color-primary);
-      }
+      
       .button {
         --button-color: var(--color-basic-positive);
         --button-border-color: var(--color-primary-light);
@@ -161,6 +136,7 @@ export class PosesComponent extends LitElement {
             placeholder=${this.placeholder}
           />
           <button
+          id="search-button"
             class="button"
             aria-label="Search Poses"
             @click="${this.searchPoses}"
@@ -173,22 +149,7 @@ export class PosesComponent extends LitElement {
         <section class="poses__list">
           <poses-ui .poses="${this.posesFiltered}"></poses-ui>
         </section>
-        <section class="favorites">
-          <header class="favorites__header">
-            <h2 class="favorites__title">${this.favoriteTitle}</h2>
-            <button
-              class="button"
-              id="button"
-              aria-label="Search Poses"
-              @click="${this.reset}"
-            >
-              <span>Reset</span>
-            </button>
-          </header>
-          <article>
-            <ul class="favorites__list"></ul>
-          </article>
-        </section>
+        
       </div>
     `;
   }

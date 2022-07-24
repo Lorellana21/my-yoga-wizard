@@ -11,7 +11,7 @@ export class HeaderUI extends LitElement {
   constructor() {
     super();
     this.link1 = "Namasté";
-    this.link2 = "Yoga session";
+    this.link2 = "Asanas Yoga";
     this.burguer = false
   }
 

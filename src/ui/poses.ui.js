@@ -20,7 +20,15 @@ export class PosesUI extends LitElement {
     return css`
       :host {
         display: block;
-        width: 100%;
+        //width: 100%;
+      }
+      #poses{
+      width:90vw;
+      display: flex;
+      flex-wrap: wrap;
+
+      //flex-direction: space-between;
+      //justify-content: space-between;
       }
 
       .card__wrapper {
@@ -30,10 +38,13 @@ export class PosesUI extends LitElement {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        padding: 10px;
+        margin-top: 10px;
         border: solid white 2px;
         border-radius: 2rem;
         width: 200px;
         height: auto;
+        background-color: lightpink;
         box-shadow: 0 5px 15px 0px rgba(14, 197, 23, 0.4);
         animation: tracking-in-expand 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
