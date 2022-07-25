@@ -155,4 +155,4 @@ export class PosesComponent extends LitElement {
   }
 }
 
-customElements.define("genk-poses", PosesComponent);
+customElements.define("poses-component", PosesComponent);
